@@ -6,7 +6,7 @@ import 'dart:io';
 import '../accounts.dart';
 import '../models/user.dart';
 
-String api='http://192.168.1.110:6006/api/';
+String api='http://192.168.1.105:6006/api/';
 
 ValueNotifier<User> currentUser =  ValueNotifier(User());
 

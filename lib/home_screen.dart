@@ -1,4 +1,5 @@
 import 'package:bankee/accounts.dart';
+import 'package:bankee/loan_screen.dart';
 import 'package:bankee/login_screen.dart';
 import 'package:bankee/repository/userRepository.dart';
 import 'package:bankee/stock_screen.dart';
@@ -17,6 +18,7 @@ import 'package:bankee/account_balance_screen.dart';
 import 'package:bankee/paybill_screen.dart';
 import 'package:bankee/makepayment_screen.dart';
 import 'package:bankee/sendmoney_screen.dart';
+import 'package:bankee/chat_details.dart';
 
 import 'models/user.dart';
 
@@ -471,7 +473,14 @@ class _home_screenState extends State<home_screen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                      ChatDetails()
+                                  ));
+                            },
                             child: Container(
                               height: 10.h,
                               width: 10.h,
@@ -504,7 +513,14 @@ class _home_screenState extends State<home_screen> {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          loan_screen()
+                                  ));
+                            },
                             child: Container(
                               height: 10.h,
                               width: 10.h,
@@ -969,14 +985,15 @@ class _home_screenState extends State<home_screen> {
                 backgroundColor: Colors.green
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.forward_to_inbox_outlined),
-              label: "inbox",
+              icon: Icon(Icons.chat),
+              label: "chat",
               backgroundColor: Colors.blue,
+
             ),
           ],
          // type: BottomNavigationBarType.shifting,
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.black,
+          selectedItemColor: Colors.deepPurpleAccent,
           unselectedItemColor: Colors.grey,
           iconSize: 40,
           onTap: _onItemTapped,
